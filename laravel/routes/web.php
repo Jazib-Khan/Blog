@@ -20,6 +20,10 @@ Route::get('/about-us', [PagesController::class,'aboutus'])->name('aboutus');
 
 Route::post('/addblog', [PagesController::class,'addblog'])->name('addblog');
 
+Route::get('/showblog/{id}', [PagesController::class,'showblog'])->name('showblog');
+
+Route::delete('/deleteblog/{id}',[PagesController::class,'deleteblog'])->name('deleteblog');
+
 Route::get('/blogs/{id}', [PagesController::class,'testingId']);
 
 //Route::get('/', function () {return view('pages/welcome');});

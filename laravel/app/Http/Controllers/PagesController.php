@@ -44,4 +44,16 @@ class PagesController extends Controller
         return redirect()->back();
         
     }
+    public function showblog($id)
+    {
+        $wp['data'] = Blog::find($id);
+
+        return view('blog.show', compact('wp'));
+    }
+
+    public function deleteblog($id)
+    {
+        $data = Blog::find($id)->delete();
+        return "deleted";
+    }
 }
