@@ -54,6 +54,6 @@ class PagesController extends Controller
     public function deleteblog($id)
     {
         $data = Blog::find($id)->delete();
-        return "deleted";
+        return redirect()->route('homepage');
     }
 }
