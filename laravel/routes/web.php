@@ -15,6 +15,11 @@ use App\Http\Controllers\PagesController;
 */
 
 Route::get('/', [PagesController::class,'index'])->name('homepage');
+
 Route::get('/about-us', [PagesController::class,'aboutus'])->name('aboutus');
+
+Route::post('/addblog', [PagesController::class,'addblog'])->name('addblog');
+
+Route::get('/blogs/{id}', [PagesController::class,'testingId']);
 
 //Route::get('/', function () {return view('pages/welcome');});

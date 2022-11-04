@@ -1,12 +1,29 @@
 @extends('layouts.master')
 @section('content')
 {{ config('app.name') }}
-        <section class="posts-listings">
-
-            <form action="" method="post">
-                <input type="text" name="title" placeholder="Add blog title">
-                <textarea name="text" cols="30" rows="10"></textarea>
+        <div class="container">
+            <center>
+                @if(Session::has('message'))
+                    <p class="alert alert-info"> {{ Session::get('message') }} </p>
+                @endif
+            </center>
+            <form action="{{ route('addblog') }}" method="post">
+                @csrf
+                <div class="form-group">
+                    <input type="text" name="title" placeholder="Add blog title" class="form-control">
+                </div>
+                <br>
+                <div class="form-group">
+                    <textarea name="text" cols="30" rows="10" class="form-control"></textarea>
+                </div>
+                <br>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success">Post</button>
+                </div>
             </form>
+        </div>
+        
+        <section class="posts-listings">
 
             <article class="post-item" href="#">
                 <a class="post-item__inner" href="#">

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Blog;
+use Session;
 
 class PagesController extends Controller
 {
@@ -25,5 +27,20 @@ class PagesController extends Controller
     public function testingId($id)
     {
         return $id;
+    }
+
+    public function addblog(Request $request) 
+    {
+        $title = $request->input('title');
+        $text = $request->input('text');
+
+        $blog = new Blog();
+        $blog->title = $title;
+        $blog->text = $text;
+        $blog->save();
+
+        Session::flash('message', 'Your blog has been added successfully');
+        return redirect()->back();
+        
     }
 }
