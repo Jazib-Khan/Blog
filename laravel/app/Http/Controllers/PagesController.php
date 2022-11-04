@@ -13,6 +13,7 @@ class PagesController extends Controller
         $wp['title'] = 'Homepage';
         $wp['description'] = "This is homepage";
         $wp['content'] = "This is the content";
+        $wp['blogData'] = Blog::all();
         return view('blog.content', compact('wp'));
     }
 
