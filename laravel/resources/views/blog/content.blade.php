@@ -25,7 +25,7 @@
         
         <section class="posts-listing">
 
-            @foreach($wp['blogData'] as $blog)
+            @foreach ($wp['blogData'] as $blog)
             <article class="post-item" href="#">
                 <a class="post-item__inner" href="#">
                 {{$blog->title}}

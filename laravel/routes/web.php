@@ -28,6 +28,6 @@ Route::get('editBlog/{id}',[PagesController::class,'editBlog'])->name('editBlog'
 
 Route::post('editBlog/{id}',[PagesController::class,'editBlogPost'])->name('editBlogPost');
 
-Route::get('/blogs/{id}', [PagesController::class,'testingId']);
+//Route::get('/blogs/{id}', [PagesController::class,'testingId']);
 
 //Route::get('/', function () {return view('pages/welcome');});

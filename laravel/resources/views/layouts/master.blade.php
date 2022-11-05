@@ -16,9 +16,6 @@
                 <li>
                     <a href="{{url('/')}}">Homepage</a>
                 </li>
-                <li>
-                    <a href="{{url('/about-us')}}">About us</a>
-                </li>
             </ul>
         </section>
 
