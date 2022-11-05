@@ -56,4 +56,27 @@ class PagesController extends Controller
         $data = Blog::find($id)->delete();
         return redirect()->route('homepage');
     }
+
+    public function editblog($id)
+    {
+        $wp['data'] = Blog::findorfail($id);
+        return view('blog.showBlog', compact('wp'));
+    }
+
+    public function editBlogPost($id, Request $request)
+    {
+    
+        $title = $request->input('title');
+        $text = $request->input('text');
+
+        $data = Blog::findorfail($id);
+        $data->text = $text;
+        $data->title = $title;
+        $data->save();
+
+        Session::flash('message', 'Your blog has been edited successfully');
+
+        return redirect()->route('homepage');
+    }
+
 }

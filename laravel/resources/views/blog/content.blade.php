@@ -28,13 +28,13 @@
             @foreach($wp['blogData'] as $blog)
             <article class="post-item" href="#">
                 <a class="post-item__inner" href="#">
-
+                {{$blog->title}}
                     <div class="post-item__thumbnail-wrapper">
                         <div class="post-item__thumbnail" style="background-image:url(image_url.jpg);"></div>
                     </div>
 
                     <div class="post-item__content-wrapper">
-                        <h2 class="post-item__title heading-size-4"><span>{{$blog->title}}}}</span></h2>
+                        <h2 class="post-item__title heading-size-4"></h2>
                     
                         <div class="post-item__metas">
                             <time class="post-item__meta post-item__meta--date" datetime="2022-02-14T20:24:54+00.00">{{$blog->created_at}}</time>
