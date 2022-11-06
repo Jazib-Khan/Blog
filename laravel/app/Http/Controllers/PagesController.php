@@ -17,19 +17,6 @@ class PagesController extends Controller
         return view('blog.content', compact('wp'));
     }
 
-    public function aboutus() 
-    {
-        $wp['title'] = 'About Us';
-        $wp['description'] = "This is about page";
-        $wp['content'] = "This is the content of about page";
-        return view('blog.about', compact('wp'));
-    }
-
-    public function testingId($id)
-    {
-        return $id;
-    }
-
     public function addblog(Request $request) 
     {
         $title = $request->input('title');

@@ -5,23 +5,38 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http=equiv="X-UA-Compatible" content="ie=edge">
         <title>Blog</title>
+        <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css"  rel="stylesheet">
+        <link rel="stylesheet" href="{{asset('css/main.css')}}">
         <link rel="stylesheet" href="{{asset('css/style.css')}}">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"></script>
     </head>
 
     <body>
-        <section>
-            <ul>
-                <li>
-                    <a href="{{url('/')}}">Homepage</a>
-                </li>
-            </ul>
-        </section>
+        <div class="nav">
+            <div class="container">
+                <ul class="pull-left">
+                    <li><img src= "{{asset('css/logo.png')}}" width= "100"></a></li>
+                </ul>
+                <ul class="pull-right">
+                    <li><a href="{{url('/')}}">Homepage</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="jumbotron">
+            <div class="container">
+                <h1>Blog</h1>
+                <p>Write your thoughts</p>
+            </div>
+        </div>
 
-            @yield('content')
+        <div class="Box">
+            <div class="container">
+                @yield('content')
+                @yield('show')
+                @yield('showBlog')
+            </div>
+        </div>
+    </body>
 
-        </body>
-
-        </html>
+</html>
 

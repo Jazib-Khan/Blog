@@ -1,12 +1,30 @@
-<h1>{{ $wp['data']->title }}</h1>
-<p>{{ $wp['data']->text }}</p>
-<p>{{ $wp['data']->created_at }}</p>
+@extends('layouts.master')
+@section('show')
 
-<a href="{{ route('editBlog', $wp['data']->id )}}">EDIT BLOG</a>
+<div class="container">
+    <div class="Box">
+        <div class="container">
 
-<form action="{{route('deleteblog', $wp['data']->id)}}" method="POST">
-    <input type="submit" value="DELETE">
-    @method('delete')
-    @csrf
-</form>
+            <h1>{{ $wp['data']->title }}</h1>
+            <p>{{ $wp['data']->text }}</p>
+            <p>{{ $wp['data']->created_at }}</p>
+
+            <form action="{{ route('editBlog', $wp['data']->id )}}">
+                <div>
+                    <input type="submit" value="EDIT">
+                </div>
+            </form>
+
+            <form action="{{route('deleteblog', $wp['data']->id)}}" method="POST">
+                <input type="submit" value="DELETE">
+                @method('delete')
+                @csrf
+            </form>
+
+        </div>
+    </div>
+</div>
+
+@endsection
+
 
